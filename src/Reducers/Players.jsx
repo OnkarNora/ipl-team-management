@@ -1,4 +1,4 @@
-import { addNewPlayer, addNewPlayerToTeam } from '../Database';
+import { addNewPlayer, addNewPlayerToTeam, removePlayerFromTeam } from '../Database';
 
 const initialState = [
 	// {
@@ -9,7 +9,7 @@ const initialState = [
 	// 	role:'captian'
 	// },
 ];
-const PlayerReducer = (state = initialState, action) => {
+const Players = (state = initialState, action) => {
 	switch (action.type) {
 
 	case 'ADD_PLAYER':
@@ -23,11 +23,18 @@ const PlayerReducer = (state = initialState, action) => {
 	case 'ADD_PLAYER_TO_TEAM':
 	{
 		addNewPlayerToTeam(action.payload).then((value) => { console.log(value); });
-		state[state.findIndex(s => s.name === action.payload.name)].team_name = action.payload.team_name;
+		state[state.findIndex(s => s.name === action.payload.name)].team_id = action.payload.team_id;
+		return state;
+	}
+
+	case 'REMOVE_PLAYER_FROM_TEAM':
+	{
+		removePlayerFromTeam(action.payload).then((value) => { console.log(value); });
+		state[state.findIndex(s => s.name === action.payload.name)].team_id = '';
 		return state;
 	}
 
 	default: return state;
 	}
 };
-export default PlayerReducer;
+export default Players;

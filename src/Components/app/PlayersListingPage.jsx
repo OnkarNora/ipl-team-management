@@ -1,29 +1,34 @@
 import React from 'react';
-import { useParams,Link } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { useEffect , useState } from 'react';
 import { auth} from '../../firebase';
 import { useNavigate } from 'react-router-dom';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import Navbar from '../Nav/NavigationBar';
-import {  Table} from 'react-bootstrap';
+
+import PropTypes from 'prop-types';
+import {  Table, Button} from 'react-bootstrap';
 import { useSelector } from 'react-redux';
 
-function PlayersListingPage() {
+import { useDispatch } from 'react-redux';
+import { removePlayerFromTeam } from '../../actions/index';
 
-	const {teamName} = useParams();
+function PlayersListingPage({reload,setReload,showAddPlayerToTeamForm}) {
 
+	const {team_id} = useParams();
+	const dispatch = useDispatch();
 
 	const [user, loading] = useAuthState(auth);
 	const navigate = useNavigate();
 	const [playersList, setPlayersList] = useState([]);
 
-	const players = useSelector((state)=> state.PlayerReducer);
-	// console.log('players are ; ',players);
+
+	const players = useSelector((state)=> state.Players);
+	
 
 	useEffect(() => {
 		if (loading) { return; }
 		if (!user) { navigate('/'); }
-		const team_players = players.filter((player)=>{return player.team_name===teamName;});
+		const team_players = players.filter((player)=>{return player.team_id===team_id;});
 
 
 		setPlayersList(team_players.map((item,id)=>{
@@ -33,17 +38,25 @@ function PlayersListingPage() {
 				<td>{item['age']}</td>
 				<td>{item['nationality']}</td>
 				<td>{item['role']}</td>
+				<td><Button variant='outline-danger' className='btn btn-sm' onClick={() => { handleRemovePlayer(item); }} >Remove</Button></td>
 
 			</tr>);
 		}));
 		
 		
-	}, [user, loading, players]);
+	}, [user, loading,players, showAddPlayerToTeamForm, reload]);
+
+	const handleRemovePlayer = (player) => {
+		dispatch(removePlayerFromTeam({ name: player.name}));
+		setReload(!reload);
+	};
+
 	return (
 		<>
-			<Navbar />
+			
 			<div>
-				<Table striped bordered hover variant="dark">
+				<h4>Players List </h4>
+				<Table striped bordered hover variant="">
 					<thead>
 						<tr>
 							<th>No.</th>
@@ -51,6 +64,7 @@ function PlayersListingPage() {
 							<th>Age</th>
 							<th>Nationality</th>
 							<th>Role</th>
+							<th>Action</th>
 
 						</tr>
 					</thead>
@@ -58,11 +72,20 @@ function PlayersListingPage() {
 						{playersList}
 					</tbody>    
 				</Table>
-				<Link className="btn btn-primary" to={'/players/'+teamName+'/addPlayers'} >Add a Player to the Team</Link>
+				
 			</div>
+
+			
 
 		</>
 	);
 }
+
+
+PlayersListingPage.propTypes = {
+	showAddPlayerToTeamForm: PropTypes.bool,
+	reload: PropTypes.bool,
+	setReload: PropTypes.func
+};
 
 export default PlayersListingPage;

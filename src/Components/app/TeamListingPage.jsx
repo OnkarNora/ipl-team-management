@@ -14,7 +14,7 @@ function TeamListingPage() {
 	const navigate = useNavigate();
 	const [TeamList, setTeamList] = useState([]);
 
-	const teams = useSelector((state)=> state.TeamReducer);
+	const teams = useSelector((state)=> state.Teams);
 
 	useEffect(() => {
 		if (loading) { return; }
@@ -24,7 +24,7 @@ function TeamListingPage() {
 		setTeamList(teams.map((item,id)=>{
 			return (<tr key={id} >
 				<td>{id+1}</td>
-				<td><Link className='links' style={{color:'#0b5ed7'}} to={'/players/'+item['team_name']} >{item['team_name']}	</Link></td>
+				<td style={{textAlign:'left'}} ><Link className='links' style={{color:'rgb(138,180,248)',marginLeft:'10px'}} to={'/players/'+item['team_id']} >{item['team_name']}	</Link></td>
 				<td>{item['home_ground']}</td>
 				<td>{item['city']}</td>
 				<td>{item['coach']}</td>

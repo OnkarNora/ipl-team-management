@@ -26,9 +26,23 @@ export const addPlayer = (data) =>{
 	};
 };
 
-export const addPlayerToTeam = (data) =>{ // data here is in format {name:"player's name who will get added", team:"team name to which player gets added"}
+export const addPlayerToTeam = (data) =>{ 
 	return {
 		type: 'ADD_PLAYER_TO_TEAM',
+		payload: data
+	};
+};
+
+export const removePlayerFromTeam = (data) =>{ 
+	return {
+		type: 'REMOVE_PLAYER_FROM_TEAM',
+		payload: data
+	};
+
+};
+export const removeTeam = (data) =>{ 
+	return {
+		type: 'REMOVE_TEAM',
 		payload: data
 	};
 };

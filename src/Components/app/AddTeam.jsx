@@ -1,28 +1,28 @@
-import React from 'react'; 
+import React from 'react';
 import { useState } from 'react';
-import Navbar from '../Nav/NavigationBar';
 import { useDispatch } from 'react-redux';
 import { addTeam } from '../../actions/index';
+import Alert from 'react-bootstrap/Alert';
 
 function AddTeam() {
 
 	const dispatch = useDispatch();
+	const [showAlert, setShowAlert] = useState(false);
+	const [teamName, setTeamName] = useState('');
+	const [homeGround, setHomeGround] = useState('');
+	const [city, setCity] = useState('');
 
-	const [teamName,setTeamName] = useState('');
-	const [homeGround,setHomeGround] = useState('');
-	const [city,setCity] = useState('');
+	const [coach, setCoach] = useState('');
+	const [debute, setDebute] = useState('');
 
-	const [coach,setCoach] = useState('');
-	const [debute,setDebute] = useState('');
-
-	const handleSubmit = (e)=>{
+	const handleSubmit = (e) => {
 		e.preventDefault();
-
+		const tid = new Date().getTime().toString();
 		dispatch(addTeam({
-			team_name : teamName,
+			team_id: tid,
+			team_name: teamName,
 			home_ground: homeGround,
 			city: city,
-
 			coach: coach,
 			debute: debute
 		}));
@@ -31,46 +31,53 @@ function AddTeam() {
 		setCity('');
 		setCoach('');
 		setDebute('');
-		alert('team has been added');
-		
+		setShowAlert(true);
+
 	};
 
-	
+
 
 
 	return (
 		<>
-			<Navbar />
-			<div className="position-absolute top-50 start-50 translate-middle " >
-				<h1 style={{color:'black',textAlign: 'center'}}>Add Team details</h1>
-				<form onSubmit={handleSubmit} style={{marginTop:'2em'}}>
-					<div className="row justify-content-center align-items-center ">
-						<div className="form-group col-md-12">
-							<label htmlFor="inputName" >Name of Team</label>
-							<input type="text" className="form-control" id="inputName" placeholder="Team Name" value={teamName} onChange={(e)=>{setTeamName(e.target.value);}}></input>
+
+			{
+				showAlert ? <Alert variant="success" onClose={() => setShowAlert(false)} dismissible>
+					<Alert.Heading>Success</Alert.Heading>
+					<p>
+						The Team has been added
+					</p>
+				</Alert> : null
+			}
+			<div className="position-absolute top-50 start-50 translate-middle mt-5" >
+				<form onSubmit={handleSubmit} >
+					<div className="">
+						<div className="form-group">
+							<label htmlFor="inputName" className="m-2">Name of Team</label>
+							<input type="text" className="form-control" id="inputName" value={teamName} onChange={(e) => { setTeamName(e.target.value); }}></input>
 						</div>
-						<div className="form-group col-md-12 ">
-							<label htmlFor="inputHomeGround">Name of the Home Ground</label>
-							<input type="text" className="form-control" id="inputHomeGround" placeholder="Home Ground" value={homeGround} onChange={(e)=>{setHomeGround(e.target.value);}}></input>
+						<div className=" form-group">
+							<label className="m-2" htmlFor="inputHomeGround">Name of the Home Ground</label>
+							<input type="text" className="form-control" id="inputHomeGround" value={homeGround} onChange={(e) => { setHomeGround(e.target.value); }}></input>
 						</div>
-						<div className="form-group col-md-12">
-							<label htmlFor="inputCity">Name of City</label>
-							<input type="text" className="form-control" id="inputCity" placeholder="City" onChange={(e)=>{setCity(e.target.value);}} value={city}></input>
+						<div className="form-group">
+							<label className="m-2" htmlFor="inputCity">Name of City</label>
+							<input type="text" className="form-control" id="inputCity" onChange={(e) => { setCity(e.target.value); }} value={city}></input>
 						</div>
 
 
-						<div className="form-group col-md-6 ">
-							<label htmlFor="inputCoach">Coach</label>
-							<input type="text" className="form-control" id="inputCoach" placeholder="Coach" value={coach} onChange={(e)=>{setCoach(e.target.value);}}></input>
+						<div className="form-group ">
+							<label className="m-2" htmlFor="inputCoach">Coach</label>
+							<input type="text" className="form-control" id="inputCoach" value={coach} onChange={(e) => { setCoach(e.target.value); }}></input>
 						</div>
-						<div className="form-group col-md-6 ">
-							<label htmlFor="inputDebute">Debute Year</label>
-							<input type="text" className="form-control" id="inputDebute" placeholder="Debute Year" value={debute} onChange={(e)=>{setDebute(e.target.value);}}></input>
+						<div className="form-group ">
+							<label className="m-2" htmlFor="inputDebute">Debute Year</label>
+							<input type="text" className="form-control" id="inputDebute" value={debute} onChange={(e) => { setDebute(e.target.value); }}></input>
 						</div>
 					</div>
 					<center>
 						<button type="submit" className="submit btn btn-primary m-3"  >
-                        Submit<i className="icon-angle-right" ></i>
+							Submit<i className="icon-angle-right" ></i>
 						</button>
 					</center>
 				</form>

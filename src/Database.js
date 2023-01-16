@@ -6,6 +6,7 @@ import {
 	collection,
 	where,
 	updateDoc,
+	deleteDoc
 } from 'firebase/firestore';
 
 import { initializeApp } from 'firebase/app';
@@ -56,7 +57,7 @@ const fetchPlayersDB = async()=>{
 
 const addNewTeam = async(team)=>{
 
-	try {
+	try {                          
 		await addDoc(collection(db, 'teams'), team);
 		return 'success';
 	} catch (err) {
@@ -86,7 +87,7 @@ const addNewPlayerToTeam = async(player)=>{
 		const q = query(collection(db, 'players'),where('name' ,'==' ,player.name));
         
 		const doc = await getDocs(q);
-		await updateDoc(doc.docs[0].ref, {'team_name':player.team_name});
+		await updateDoc(doc.docs[0].ref, {'team_id':player.team_id});
 		return 'success';
 	} catch (err) {
 		console.error(err);
@@ -96,11 +97,46 @@ const addNewPlayerToTeam = async(player)=>{
 
 };
 
+const removePlayerFromTeam = async(player)=>{
+
+	try {
+		const q = query(collection(db, 'players'),where('name' ,'==' ,player.name));
+        
+		const doc = await getDocs(q);
+		await updateDoc(doc.docs[0].ref, {'team_id':''});
+		return 'success';
+	} catch (err) {
+		console.error(err);
+		alert(err.message);
+		return 'error';
+	}
+
+};
+
+const removeTeam = async(team_id)=>{
+
+	try {      
+		
+		const q = query(collection(db, 'teams'),where('team_id' ,'==' ,team_id));
+		const doc = await getDocs(q);
+		await deleteDoc(doc.docs[0].ref);
+		return 'success';
+	} catch (err) {
+		console.error(err);
+		alert(err.message);
+		return 'error';
+	}
+
+};
+
+
 export {
 	fetchTeamsDB,
 	fetchPlayersDB,
 	addNewTeam,
 	addNewPlayer,
-	addNewPlayerToTeam
+	addNewPlayerToTeam,
+	removePlayerFromTeam,
+	removeTeam
 
 };

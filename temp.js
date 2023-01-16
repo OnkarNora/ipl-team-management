@@ -2,305 +2,305 @@ const tempSubmit = (e) => {
 	e.preventDefault();
 
 	const data = [{
-		'name': 'Noah Bellelli',
-		'team_name': 'GT',
-		'nationality': 'Australia',
-		'role': 'all rounder',
-		'age': 42
-	}, {
-		'name': 'Andrew Colten',
-		'team_name': 'DC',
-		'nationality': 'Pakistan',
-		'role': 'bowler',
-		'age': 26
-	}, {
-		'name': 'Henderson Spieck',
-		'team_name': 'DC',
-		'nationality': 'Bangladesh',
-		'role': 'batsman',
-		'age': 27
-	}, {
-		'name': 'Hastings Championnet',
-		'team_name': 'GT',
-		'nationality': 'Bangladesh',
-		'role': 'all rounder',
-		'age': 28
-	}, {
-		'name': 'Taryn Lakes',
-		'team_name': 'RCB',
-		'nationality': 'Bangladesh',
-		'role': 'captain',
-		'age': 24
-	}, {
-		'name': 'Bernice Clemmens',
-		'team_name': 'CSK',
-		'nationality': 'Pakistan',
-		'role': 'bowler',
-		'age': 31
-	}, {
-		'name': 'Harlen Laughlin',
-		'team_name': 'LSB',
-		'nationality': 'Pakistan',
-		'role': 'captain',
-		'age': 39
-	}, {
-		'name': 'Barbara O\'Grogane',
-		'team_name': 'MI',
-		'nationality': 'Pakistan',
-		'role': 'batsman',
-		'age': 40
-	}, {
-		'name': 'Corny Ramble',
-		'team_name': '',
-		'nationality': 'Bangladesh',
-		'role': 'captain',
-		'age': 27
-	}, {
-		'name': 'Davidson Aleksidze',
-		'team_name': 'SRH',
-		'nationality': 'Bangladesh',
+		'name': 'Geri Bodell',
+		'age': 26,
+		'nationality': 'USA',
 		'role': 'wicket keeper',
-		'age': 27
+		'team_id': '1673418963117'
 	}, {
-		'name': 'Leonhard Andrzejczak',
-		'team_name': 'LSB',
+		'name': 'Rodina Pulman',
+		'age': 30,
+		'nationality': 'Australia',
+		'role': 'Bowler',
+		'team_id': '1673418963117'
+	}, {
+		'name': 'Francklyn Gartell',
+		'age': 34,
 		'nationality': 'Pakistan',
+		'role': 'Bowler',
+		'team_id': ''
+	}, {
+		'name': 'Dorisa Culpen',
+		'age': 25,
+		'nationality': 'Pakistan',
+		'role': 'Captain',
+		'team_id': '1673418937061'
+	}, {
+		'name': 'Nester Oxtiby',
+		'age': 30,
+		'nationality': 'USA',
 		'role': 'wicket keeper',
-		'age': 40
+		'team_id': ''
 	}, {
-		'name': 'Sophia Hudson',
-		'team_name': 'CSK',
+		'name': 'Eula Fridd',
+		'age': 28,
+		'nationality': 'Pakistan',
+		'role': 'All Rounder',
+		'team_id': '1673418963117'
+	}, {
+		'name': 'Ange Yosselevitch',
+		'age': 32,
+		'nationality': 'Pakistan',
+		'role': 'Batsman',
+		'team_id': '1673418990701'
+	}, {
+		'name': 'Clementine Dunnan',
+		'age': 22,
+		'nationality': 'Pakistan',
+		'role': 'Bowler',
+		'team_id': '1673418990701'
+	}, {
+		'name': 'Lita Ryal',
+		'age': 23,
+		'nationality': 'Pakistan',
+		'role': 'All Rounder',
+		'team_id': '1673419243451'
+	}, {
+		'name': 'Gertrud Willder',
+		'age': 27,
+		'nationality': 'New zealand',
+		'role': 'wicket keeper',
+		'team_id': '1673419001445'
+	}, {
+		'name': 'Nita Thurbon',
+		'age': 22,
 		'nationality': 'Australia',
-		'role': 'vice captain',
-		'age': 29
+		'role': 'All Rounder',
+		'team_id': '1673418963117'
 	}, {
-		'name': 'Emmalyn Lindstrom',
-		'team_name': '',
-		'nationality': 'Bangladesh',
-		'role': 'vice captain',
-		'age': 34
+		'name': 'Mickie Feldstern',
+		'age': 34,
+		'nationality': 'India',
+		'role': 'Bowler',
+		'team_id': '1673418963117'
 	}, {
-		'name': 'Lorri Bacop',
-		'team_name': 'CSK',
-		'nationality': 'Pakistan',
-		'role': 'vice captain',
-		'age': 32
+		'name': 'Marcie Huzzay',
+		'age': 39,
+		'nationality': 'India',
+		'role': 'Captain',
+		'team_id': '1673418963117'
 	}, {
-		'name': 'Niki Mc Gorley',
-		'team_name': 'LSB',
-		'nationality': 'Bangladesh',
-		'role': 'bowler',
-		'age': 30
-	}, {
-		'name': 'Lyndsie Ivanishin',
-		'team_name': 'GT',
-		'nationality': 'Pakistan',
-		'role': 'all rounder',
-		'age': 20
-	}, {
-		'name': 'Moses Shilliday',
-		'team_name': 'MI',
-		'nationality': 'Pakistan',
-		'role': 'bowler',
-		'age': 41
-	}, {
-		'name': 'Robbie Dilger',
-		'team_name': 'DC',
-		'nationality': 'Australia',
-		'role': 'bowler',
-		'age': 23
-	}, {
-		'name': 'Heriberto Bern',
-		'team_name': 'CSK',
-		'nationality': 'Pakistan',
-		'role': 'captain',
-		'age': 33
-	}, {
-		'name': 'Antone Batchley',
-		'team_name': 'RCB',
-		'nationality': 'Bangladesh',
-		'role': 'bowler',
-		'age': 26
-	}, {
-		'name': 'Ferris Brand',
-		'team_name': 'RCB',
-		'nationality': 'Pakistan',
-		'role': 'captain',
-		'age': 28
-	}, {
-		'name': 'Ivette Whorlow',
-		'team_name': 'SRH',
-		'nationality': 'Pakistan',
-		'role': 'vice captain',
-		'age': 39
-	}, {
-		'name': 'Kennan Charrisson',
-		'team_name': 'DC',
-		'nationality': 'Australia',
-		'role': 'bowler',
-		'age': 38
-	}, {
-		'name': 'Connie Layton',
-		'team_name': 'SRH',
-		'nationality': 'Pakistan',
-		'role': 'vice captain',
-		'age': 38
-	}, {
-		'name': 'Jane Bexley',
-		'team_name': 'MI',
-		'nationality': 'Pakistan',
-		'role': 'batsman',
-		'age': 42
-	}, {
-		'name': 'Emili Joutapavicius',
-		'team_name': 'GT',
-		'nationality': 'Pakistan',
-		'role': 'bowler',
-		'age': 30
-	}, {
-		'name': 'Den Casserley',
-		'team_name': 'CSK',
-		'nationality': 'Australia',
-		'role': 'captain',
-		'age': 34
-	}, {
-		'name': 'Barton Blackader',
-		'team_name': 'DC',
-		'nationality': 'Pakistan',
-		'role': 'vice captain',
-		'age': 39
-	}, {
-		'name': 'Winnifred Preator',
-		'team_name': '',
-		'nationality': 'Pakistan',
-		'role': 'captain',
-		'age': 38
-	}, {
-		'name': 'Trumaine Masdin',
-		'team_name': 'SRH',
-		'nationality': 'Pakistan',
-		'role': 'bowler',
-		'age': 40
-	}, {
-		'name': 'Rosana Tures',
-		'team_name': 'DC',
+		'name': 'Randi MacConchie',
+		'age': 35,
 		'nationality': 'Australia',
 		'role': 'wicket keeper',
-		'age': 28
+		'team_id': '1673418937061'
 	}, {
-		'name': 'Cord Hovenden',
-		'team_name': '',
-		'nationality': 'Pakistan',
-		'role': 'batsman',
-		'age': 30
-	}, {
-		'name': 'Bondon Irving',
-		'team_name': 'CSK',
+		'name': 'Evaleen Shatliff',
+		'age': 32,
 		'nationality': 'Australia',
-		'role': 'captain',
-		'age': 42
+		'role': 'Bowler',
+		'team_id': '1673419001445'
 	}, {
-		'name': 'Luciana Rabat',
-		'team_name': 'GT',
-		'nationality': 'Pakistan',
-		'role': 'captain',
-		'age': 27
+		'name': 'Urbain Didball',
+		'age': 22,
+		'nationality': 'UAE',
+		'role': 'Bowler',
+		'team_id': '1673419014916'
 	}, {
-		'name': 'Alberta Petruskevich',
-		'team_name': 'MI',
-		'nationality': 'Pakistan',
+		'name': 'Irena Wettern',
+		'age': 24,
+		'nationality': 'Australia',
 		'role': 'wicket keeper',
-		'age': 37
+		'team_id': '1673418990701'
 	}, {
-		'name': 'Barbe MacRorie',
-		'team_name': 'MI',
-		'nationality': 'Pakistan',
-		'role': 'batsman',
-		'age': 42
+		'name': 'Taylor Bryers',
+		'age': 31,
+		'nationality': 'UAE',
+		'role': 'Captain',
+		'team_id': '1673418963117'
 	}, {
-		'name': 'Jozef Thewlis',
-		'team_name': 'RCB',
-		'nationality': 'Pakistan',
-		'role': 'all rounder',
-		'age': 27
+		'name': 'Maxi Gilder',
+		'age': 20,
+		'nationality': 'UAE',
+		'role': 'All Rounder',
+		'team_id': '1673418963117'
 	}, {
-		'name': 'Fern Howarth',
-		'team_name': 'MI',
-		'nationality': 'Pakistan',
-		'role': 'batsman',
-		'age': 41
-	}, {
-		'name': 'Joanna McAllen',
-		'team_name': 'SRH',
-		'nationality': 'Bangladesh',
-		'role': 'bowler',
-		'age': 34
-	}, {
-		'name': 'Ramsey Cashell',
-		'team_name': 'SRH',
-		'nationality': 'Pakistan',
-		'role': 'captain',
-		'age': 32
-	}, {
-		'name': 'Orazio Grevatt',
-		'team_name': 'RCB',
-		'nationality': 'Bangladesh',
-		'role': 'batsman',
-		'age': 30
-	}, {
-		'name': 'Richard Lichtfoth',
-		'team_name': 'RCB',
-		'nationality': 'Pakistan',
-		'role': 'batsman',
-		'age': 28
-	}, {
-		'name': 'Darrel Timbridge',
-		'team_name': 'SRH',
-		'nationality': 'Bangladesh',
-		'role': 'captain',
-		'age': 42
-	}, {
-		'name': 'Pam Mussotti',
-		'team_name': '',
-		'nationality': 'Pakistan',
+		'name': 'Arabele Labitt',
+		'age': 40,
+		'nationality': 'UAE',
 		'role': 'wicket keeper',
-		'age': 38
+		'team_id': '1673418963117'
 	}, {
-		'name': 'Rudolfo Rigts',
-		'team_name': 'GT',
-		'nationality': 'Pakistan',
-		'role': 'bowler',
-		'age': 24
-	}, {
-		'name': 'Fredra Brindle',
-		'team_name': 'RCB',
-		'nationality': 'Pakistan',
-		'role': 'captain',
-		'age': 34
-	}, {
-		'name': 'Mella Bridden',
-		'team_name': 'MI',
+		'name': 'Nonie Carless',
+		'age': 21,
 		'nationality': 'Bangladesh',
-		'role': 'batsman',
-		'age': 41
+		'role': 'wicket keeper',
+		'team_id': ''
 	}, {
-		'name': 'Nathalia Soares',
-		'team_name': 'CSK',
-		'nationality': 'Bangladesh',
-		'role': 'all rounder',
-		'age': 21
+		'name': 'Venus Cavaney',
+		'age': 26,
+		'nationality': 'New zealand',
+		'role': 'Captain',
+		'team_id': '1673419001445'
 	}, {
-		'name': 'Dominique McCrostie',
-		'team_name': 'SRH',
+		'name': 'Hewie McKirdy',
+		'age': 26,
+		'nationality': 'USA',
+		'role': 'Captain',
+		'team_id': '1673418937061'
+	}, {
+		'name': 'Isa Radford',
+		'age': 24,
 		'nationality': 'Pakistan',
-		'role': 'all rounder',
-		'age': 29
+		'role': 'Captain',
+		'team_id': '1673419243451'
 	}, {
-		'name': 'Cherilyn Klyner',
-		'team_name': 'MI',
+		'name': 'Melinda Croci',
+		'age': 36,
+		'nationality': 'Australia',
+		'role': 'All Rounder',
+		'team_id': '1673418990701'
+	}, {
+		'name': 'Charlotte Barendtsen',
+		'age': 26,
+		'nationality': 'Australia',
+		'role': 'Bowler',
+		'team_id': '1673418990701'
+	}, {
+		'name': 'Fanny Jessop',
+		'age': 36,
+		'nationality': 'USA',
+		'role': 'Bowler',
+		'team_id': '1673418990701'
+	}, {
+		'name': 'Jule Jansema',
+		'age': 24,
+		'nationality': 'India',
+		'role': 'Batsman',
+		'team_id': '1673419001445'
+	}, {
+		'name': 'Orella Dilloway',
+		'age': 29,
+		'nationality': 'Pakistan',
+		'role': 'Captain',
+		'team_id': '1673418937061'
+	}, {
+		'name': 'Phaedra Gallaway',
+		'age': 24,
+		'nationality': 'Pakistan',
+		'role': 'Bowler',
+		'team_id': '1673418990701'
+	}, {
+		'name': 'Clyve Wolfers',
+		'age': 36,
 		'nationality': 'Bangladesh',
-		'role': 'bowler',
-		'age': 37
+		'role': 'wicket keeper',
+		'team_id': '1673419014916'
+	}, {
+		'name': 'Cora Iacobini',
+		'age': 26,
+		'nationality': 'India',
+		'role': 'Batsman',
+		'team_id': '1673418937061'
+	}, {
+		'name': 'Robers Silverton',
+		'age': 26,
+		'nationality': 'Bangladesh',
+		'role': 'Batsman',
+		'team_id': '1673419014916'
+	}, {
+		'name': 'Bonnibelle Van Brug',
+		'age': 39,
+		'nationality': 'UAE',
+		'role': 'Batsman',
+		'team_id': ''
+	}, {
+		'name': 'Gilli Fahy',
+		'age': 30,
+		'nationality': 'India',
+		'role': 'wicket keeper',
+		'team_id': '1673418990701'
+	}, {
+		'name': 'Samara Cockrem',
+		'age': 38,
+		'nationality': 'India',
+		'role': 'Batsman',
+		'team_id': '1673419014916'
+	}, {
+		'name': 'Neils Roumier',
+		'age': 20,
+		'nationality': 'Bangladesh',
+		'role': 'wicket keeper',
+		'team_id': '1673418963117'
+	}, {
+		'name': 'Edward Yarrell',
+		'age': 26,
+		'nationality': 'India',
+		'role': 'Batsman',
+		'team_id': '1673418990701'
+	}, {
+		'name': 'Addia Weeke',
+		'age': 32,
+		'nationality': 'Pakistan',
+		'role': 'Bowler',
+		'team_id': '1673419014916'
+	}, {
+		'name': 'Rosette Domniney',
+		'age': 34,
+		'nationality': 'UAE',
+		'role': 'Captain',
+		'team_id': '1673418937061'
+	}, {
+		'name': 'Germain Roffe',
+		'age': 28,
+		'nationality': 'India',
+		'role': 'All Rounder',
+		'team_id': '1673419001445'
+	}, {
+		'name': 'Ody McEntegart',
+		'age': 35,
+		'nationality': 'Pakistan',
+		'role': 'Batsman',
+		'team_id': '1673418963117'
+	}, {
+		'name': 'Gretal Yesenin',
+		'age': 35,
+		'nationality': 'Bangladesh',
+		'role': 'wicket keeper',
+		'team_id': '1673418963117'
+	}, {
+		'name': 'Codi Franckton',
+		'age': 37,
+		'nationality': 'India',
+		'role': 'Bowler',
+		'team_id': '1673419001445'
+	}, {
+		'name': 'Jemimah Haestier',
+		'age': 39,
+		'nationality': 'Australia',
+		'role': 'All Rounder',
+		'team_id': ''
+	}, {
+		'name': 'Maurits Loan',
+		'age': 29,
+		'nationality': 'Bangladesh',
+		'role': 'Batsman',
+		'team_id': '1673418990701'
+	}, {
+		'name': 'Weider McBryde',
+		'age': 33,
+		'nationality': 'Bangladesh',
+		'role': 'Batsman',
+		'team_id': '1673418937061'
+	}, {
+		'name': 'Genny Dalloway',
+		'age': 30,
+		'nationality': 'USA',
+		'role': 'Bowler',
+		'team_id': '1673418963117'
+	}, {
+		'name': 'Fabio Zanuciolii',
+		'age': 36,
+		'nationality': 'Pakistan',
+		'role': 'Captain',
+		'team_id': '1673419243451'
+	}, {
+		'name': 'Filide Sturgeon',
+		'age': 25,
+		'nationality': 'UAE',
+		'role': 'Captain',
+		'team_id': '1673419243451'
 	}];
 	data.forEach((val) => {
 		dispatch(addPlayer(val));
